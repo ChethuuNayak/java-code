@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Visitor information</title>
+</head>
+<body>
+
+  <div class="container">
+  <div class="row">
+  <h1 class="text-center">visitor information</h1>
+ 
+ <form th:action="@{/visitors}" th:object = "${visitor}" method="POST">
+ <div class="form-group">
+ <label>Visitor's Name
+ <input
+ type="text"
+ name="visitorName"
+ placeholder="enter the visitor's name"
+ >
+ </label>
+ 
+ </div>
+ 
+ <div class="form-group">
+ <label>CardNo
+ <input
+ type="text"
+ name="cardNo"
+ placeholder="enter the cardNo"
+ >
+ </label>
+ 
+ </div>
+ 
+ 
+ <div class="form-group">
+ <label>date
+ <input
+ type="date"
+ name="date"
+ placeholder="set the date"
+ >
+ </label>
+ 
+ </div>
+ 
+ <div class="form-group">
+ <label>allow status
+ <input
+ type="text"
+ name="allowStatus"
+ >
+ <select name="status">
+ <option value="activated">activated</option>
+ 
+ <option value="de-activated">de-activated</option>
+ 
+ </select>
+
+ </label>
+ 
+ </div>
+ 
+ <br> <br>
+ 
+ 
+ 
+ 
+  <button type="submit" class="btn btn-primary">submit</button>
+    
+ 
+ </form>
+  
+  
+  </div>
+  
+  
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Visitor's Management System</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+      crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Visitors's Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/visitors}">visitor database</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br> <br>
+
+
+
+  
+  <div class="container">
+  <div class="row">
+  <h1>List of Visitors</h1>
+ 
+  </div>
+  
+ 
+ <div class="row"> 
+  <div class="col-lg-3">
+ <a th:href ="@{visitors/new}" class="btn btn-primary btn-sm mb-3"> Add Visitor</a>
+  </div>
+ 
+ </div>
+  <table class="table table-stripped table-bordered">
+  <thead class="table-dark">
+  <tr>
+  <th>Visitor</th>
+  <th>cardNo</th>
+  <th>date</th>
+  <th>allow status</th>
+  <th>Action </th>
+  </tr>
+  </thead>
+  
+  <tbody>
+  <tr th:each ="visitor: ${visitors}" >
+      <td th:text = "${visitor.visitorName}"></td>
+      <td th:text = "${visitor.cardNo}"></td>
+      <td th:text = "${visitor.date}"></td>
+      <td th:text = "${visitor.allowStatus}"></td>
+       
+       
+        <td>
+         <a th:href = "@{visitors/edit/{id}(id=${visitor.id})}"
+             class="btn btn-primary">Update</a>
+             
+               <a th:href = "@{/visitors/delete/{id}(id=${visitor.id})}"
+             class="btn btn-danger">Delete</a>
+             
+         
+         </td>
+             
+         
+         </td>
+       
+       
+  </tr>
+  
+  </tbody>
+  
+  </table>
+  
+  </div>
+
+
+</body>
+</html>
+
+
